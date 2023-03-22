@@ -3,6 +3,7 @@ import math
 import time
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 def sieve_of_eratosthenes(n):
     nums = [False, False]
@@ -24,7 +25,8 @@ def sieve_of_sundaram(n):
             return 1    
     k = (n - 3) // 2 + 1
 
-    nums = [True for i in range(k)]
+    nums = [False, False]
+    nums += [True] * (n - 1)
 
     for i in range((int(math.sqrt(n)) - 3) // 2 + 1):
             p = 2 * i + 3
@@ -33,6 +35,36 @@ def sieve_of_sundaram(n):
             for j in range(s, k, p):
                 nums[j] = False
     return nums
+
+
+def sieve_of_atkin(n):
+    P = [2,3]
+    r = range(1,int(math.sqrt(n))+1)
+    sieve=[False] * (n + 1)
+    for x in r:
+        for y in r:
+            i = x * x
+            j = y * y
+            k = 3 * i
+            l = 4 * i + j
+            if l <= n and (l % 12 == 1 or l % 12 == 5):
+                sieve[l] = not sieve[l]
+            l = k + j
+            if l <= n and n % 12 == 7 :
+                sieve[l] = not sieve[l]
+            l = k - j
+            if x > y and l <= n and l % 12 == 11:
+                sieve[l] = not sieve[l]
+    for x in range(5, int(math.sqrt(n))):
+        if sieve[x]:
+            i = x * x
+            for y in range(i, n + 1, i):
+                sieve[y] = False
+    for p in range(5,n):
+        if sieve[p]:
+            P.append(p)
+    return P
+
 
 df = []
 
@@ -55,7 +87,7 @@ plt.plot(list(range(10)), df)
 
 plt.xlabel("Power of 10")
 plt.ylabel("Time for execute")
-plt.title("Execute time for Sieve of Sundaram")
+plt.title("Execute time for Sieve of Atkin")
 plt.show()
 
 print(df)
