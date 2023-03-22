@@ -1,9 +1,7 @@
-import random
 import math
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-import sys
 
 def sieve_of_eratosthenes(n):
     nums = [False, False]
@@ -66,28 +64,28 @@ def sieve_of_atkin(n):
     return P
 
 
-df = []
+# df = []
 
-for i in range(10):
-    start = time.time()
+# for i in range(10):
+#     start = time.time()
 
-    sieve_of_sundaram(10 ** i)
+#     sieve_of_sundaram(10 ** i)
 
-    end = time.time()
+#     end = time.time()
 
-    df.append(end - start)
-    print("DONE: " + str(i + 1) + "/10")
+#     df.append(end - start)
+#     print("DONE: " + str(i + 1) + "/10")
 
-print(df)
+# print(df)
 
-small_value = 1e-10
-df = np.log10([x + small_value for x in df])
+# small_value = 1e-10
+# df = np.log10([x + small_value for x in df])
 
-plt.plot(list(range(10)), df)
+# plt.plot(list(range(10)), df)
 
-plt.xlabel("Power of 10")
-plt.ylabel("Time for execute")
-plt.title("Execute time for Sieve of Atkin")
-plt.show()
+# plt.xlabel("Power of 10")
+# plt.ylabel("Time for execute")
+# plt.title("Execute time for Sieve of Atkin")
+# plt.show()
 
-print(df)
+# print(df)

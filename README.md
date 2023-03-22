@@ -6,7 +6,7 @@ Different methods of handling prime numbers. Most sources are credited to Wikipe
 
 ### [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 
-This method of finding primes is perhaps the most famous, as it is simple yet clever. As you iterate through each integer from 2 to $\sqrt{n}$, you eliminate its multiples. The time complexity is $O(n \log{\log{n}})$.
+This method of finding primes is perhaps the most famous, as it is simple yet clever. As you iterate through each integer from 2 to $\sqrt{n}$, you eliminate its multiples. The theoretical time complexity is $O(n \log{\log{n}})$.
 
 A sample pseudocode is as follows:
 
@@ -60,7 +60,7 @@ This more recent method is a variant of the Sieve of Eratosthenes. We first take
 * $i,j\in\mathbb{N},\ 1 \le i \le j$
 * $i + j + 2ij \le n$
 
-Then, we are left with all primes to 2n + 2 (except for 2) when multiplying the remaining numbers and adding 1. The time complexity is $O(n \log{n})$.
+Then, we are left with all primes to 2n + 2 (except for 2) when multiplying the remaining numbers and adding 1. The theoretical time complexity is $O(n \log{n})$.
 
 A sample pseudocode is as follows:
 
@@ -114,7 +114,7 @@ algorithm Sieve of Sundaram is
 
 ### [Sieve of Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin)
 
-The time complexity is $O(n)$.
+This sieve is similar to the previous sieves, but does some preliminary work then marks off the squares of primes. The theoretical time complexity is $O(n)$.
 
 A sample pseudocode is as follows:
 
@@ -158,12 +158,70 @@ for 7 ≤ n ≤ limit, n ← 60 × w + x where w ∈ {0,1,...}, x ∈ s:
     if is_prime(n): output n
 ```
 
+![Sieve of Atkin](https://cdn.discordapp.com/attachments/905301278647783428/1088157274922557450/image.png)
 
-## Checking
+| Power | Time (seconds)        |
+| ----- | --------------------- |
+| 0     | 0.0 (negligible)      |
+| 1     | 0.0 (negligible)      |
+| 2     | 0.0 (negligible)      |
+| 3     | 0.0 (negligible)      |
+| 4     | 0.0 (negligible)      |
+| 5     | 0.0029921531677246094 |
+| 6     | 0.04687356948852539   |
+| 7     | 0.984621524810791     |
+| 8     | 12.938156366348267    |
+| 9     | 171.72893929481506    |
 
-asd
+| Power | Log Time (log seconds) |
+| ----- | ---------------------- |
+| 0     | -10.0                  |
+| 1     | -10.0                  |
+| 2     | -10.0                  |
+| 3     | -10.0                  |
+| 4     | -10.0                  |
+| 5     | -2.52401616            |
+| 6     | -1.32907197            |
+| 7     | -0.00673067430         |
+| 8     | 1.11187240             |
+| 9     | 2.23484349             |
 
+# Checking Primes
 
-## Nth prime
+## Brute Force
+
+This method is done by checking if the number is divisible by any number from 2 to $\sqrt{n}$. The theoretical time complexity is $O(\sqrt{n})$.
+
+![Brute Force](https://cdn.discordapp.com/attachments/905301278647783428/1088178506648797305/image.png)
+
+| Power | Time (seconds)        |
+| ----- | --------------------- |
+| 0     | 0.0 (negligible)      |
+| 1     | 0.0 (negligible)      |
+| 2     | 0.0 (negligible)      |
+| 3     | 0.0 (negligible)      |
+| 4     | 0.0 (negligible)      |
+| 5     | 0.0 (negligible)      |
+| 6     | 0.0 (negligible)      |
+| 7     | 0.0 (negligible)      |
+| 8     | 0.0 (negligible)      |
+| 9     | 0.0009698867797851562 |
+
+| Power | Log Time (log seconds) |
+| ----- | ---------------------- |
+| 0     | -10.0                  |
+| 1     | -10.0                  |
+| 2     | -10.0                  |
+| 3     | -10.0                  |
+| 4     | -10.0                  |
+| 5     | -10.0                  |
+| 6     | -10.0                   |
+| 7     | -10.0                   |
+| 8     | -10.0                   |
+| 9     | -3.01327892             |
+
+## Primality testing
+
+# Nth prime
 
 asd
