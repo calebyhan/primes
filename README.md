@@ -58,7 +58,7 @@ This more recent method is a variant of the Sieve of Eratosthenes. We first take
 * $i,j\in\mathbb{N},\ 1 \le i \le j$
 * $i + j + 2ij \le n$
 
-Then, we are left with all primes to 2n + 2 (except for 2) when multiplying the remaining numbers and adding 1.
+Then, we are left with all primes to 2n + 2 (except for 2) when multiplying the remaining numbers and adding 1. The time complexity is $O(n \log{n})$.
 
 A sample pseudocode is as follows:
 
@@ -76,11 +76,40 @@ algorithm Sieve of Sundaram is
     let i, j be equal to 1
 
     for i = 0, 1, 2, 3, ..., not exceeding (√n - 3) // 2 + 1
-        for j 
-
+        for j in between ((2 * i + 3) * (2 * i + 3) - 3) // 2 and (n - 3) // 2 + 1 with step 2 * i + 3
+            set A[j] as False
 
     return all i such that A[i] is true.
 ```
+
+![Sieve of Sundaram](https://cdn.discordapp.com/attachments/905301278647783428/1088078932307353670/image.png)
+
+| Power | Time (seconds)        |
+| ----- | --------------------- |
+| 0     | 0.0 (negligible)      |
+| 1     | 0.0 (negligible)      |
+| 2     | 0.0 (negligible)      |
+| 3     | 0.0 (negligible)      |
+| 4     | 0.003995418548583984  |
+| 5     | 0.004004478454589844  |
+| 6     | 0.10068106651306152   |
+| 7     | 2.3013129234313965    |
+| 8     | 29.09872841835022     |
+| 9     | 381.39671087265015    |
+
+| Power | Log Time (log seconds) |
+| ----- | ---------------------- |
+| 0     | -10.0                  |
+| 1     | -10.0                  |
+| 2     | -10.0                  |
+| 3     | -10.0                  |
+| 4     | -2.39843771            |
+| 5     | -2.39745403            |
+| 6     | -0.99705219            |
+| 7     | 0.36197568             |
+| 8     | 1.46387401             |
+| 9     | 2.58137694             |
+
 
 ## Checking
 
