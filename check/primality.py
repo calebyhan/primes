@@ -9,9 +9,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 import generate.sieves
 
-def brute(n):
-    for i in range(2, int(math.sqrt(n))):
-        if n % i == 0:
+def aks(n):
+    if (n ^ 1 == n + 1):
+        if n == 2:
+            return True         
+        return False
+    for i in range(3, n // 2):
+        if math.comb(n, i) % n != 0:
             return False
     return True
 
@@ -22,7 +26,7 @@ for i in range(10):
 
     start = time.time()
 
-    brute(num)
+    aks(num)
 
     end = time.time()
 
@@ -39,7 +43,7 @@ plt.plot(list(range(10)), df)
 
 plt.xlabel("Power of 10")
 plt.ylabel("Time for execute")
-plt.title("Execute time for Brute Method")
+plt.title("Execute time for AKS Primality test")
 plt.show()
 
 print(df)
