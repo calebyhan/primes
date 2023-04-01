@@ -1,3 +1,5 @@
+**Project Portfolio: https://github.com/calebyhan/CalebHan** 
+
 Different methods of handling prime numbers. Most sources are credited to Wikipedia and appropiately following sources. All code used is by no means perfectly optimized, and all data shown should be merely used as reference.
 
 # Generating Primes
