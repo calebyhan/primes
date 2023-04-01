@@ -219,9 +219,3 @@ This method is done by checking if the number is divisible by any number from 2 
 | 7     | -10.0                   |
 | 8     | -10.0                   |
 | 9     | -3.01327892             |
-
-## Primality testing
-
-# Nth prime
-
-asd
